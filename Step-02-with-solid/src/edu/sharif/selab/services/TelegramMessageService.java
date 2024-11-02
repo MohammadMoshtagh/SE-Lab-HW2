@@ -1,12 +1,22 @@
 package edu.sharif.selab.services;
 
-import edu.sharif.selab.models.EmailMessage;
-import edu.sharif.selab.models.SmsMessage;
+import edu.sharif.selab.models.Message;
 import edu.sharif.selab.models.TelegramMessage;
 
 import java.util.regex.Pattern;
 
 public class TelegramMessageService implements MessageService {
+
+    private static TelegramMessageService instance = null;
+
+    private TelegramMessageService() {}
+
+    public static TelegramMessageService getInstance() {
+        if (instance == null) {
+            instance = new TelegramMessageService();
+        }
+        return instance;
+    }
 
     @Override
     public void sendMessage(Message message) {

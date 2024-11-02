@@ -1,9 +1,20 @@
 package edu.sharif.selab.services;
 
-import edu.sharif.selab.models.EmailMessage;
+import edu.sharif.selab.models.Message;
 import edu.sharif.selab.models.SmsMessage;
 
 public class SmsMessageService implements MessageService{
+
+    private static SmsMessageService instance = null;
+
+    private SmsMessageService() {}
+
+    public static SmsMessageService getInstance() {
+        if (instance == null) {
+            instance = new SmsMessageService();
+        }
+        return instance;
+    }
 
     @Override
     public void sendMessage(Message message) {

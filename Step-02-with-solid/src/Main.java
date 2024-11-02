@@ -1,20 +1,21 @@
-import edu.sharif.selab.models.EmailMessage;
-import edu.sharif.selab.models.Message;
-import edu.sharif.selab.models.SmsMessage;
+import edu.sharif.selab.models.*;
 import edu.sharif.selab.services.EmailMessageService;
 import edu.sharif.selab.services.MessageService;
+import edu.sharif.selab.services.MessageServiceFactory;
 import edu.sharif.selab.services.SmsMessageService;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
+import static edu.sharif.selab.models.MessagingType.SMS;
 
 public class Main {
     public static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Hello and Welcome to SE Lab Messenger.");
-        int userAnswer=0;
-        do{
+        int userAnswer = 0;
+        do {
             Message message = null;
-            MessageService messageService;
             String source;
             String target;
             String content;
@@ -29,10 +30,11 @@ public class Main {
                 break;
             }
 
-            MessageService messageService;
+            MessagingType messagingType = MessagingType.fromId(userAnswer);
+            MessageService messageService = MessageServiceFactory.getMessageService(messagingType);
 
-            switch (userAnswer){
-                case 1:
+            switch (messagingType){
+                case SMS:
                     SmsMessage smsMessage = new SmsMessage();
                     System.out.print("Enter source phone : ");
                     source = scanner.next();
@@ -44,9 +46,8 @@ public class Main {
                     content = scanner.next(".*$");
                     smsMessage.setContent(content);
                     message = smsMessage;
-                    messageService = new SmsMessageService();
                     break;
-                case 2:
+                case EMAIL:
                     EmailMessage emailMessage = new EmailMessage();
                     System.out.print("Enter source phone : ");
                     source = scanner.next();
@@ -58,14 +59,24 @@ public class Main {
                     content = scanner.next();
                     emailMessage.setContent(content);
                     message = emailMessage;
-                    messageService = new EmailMessageService();
+                    break;
+                case TELEGRAM:
+                    TelegramMessage telegramMessage = new TelegramMessage();
+                    System.out.print("Enter source id : ");
+                    source = scanner.next();
+                    telegramMessage.setSourceId(source);
+                    System.out.print("Enter target id : ");
+                    target = scanner.next();
+                    telegramMessage.setDestinationId(target);
+                    System.out.println("Write Your Message : ");
+                    content = scanner.next();
+                    telegramMessage.setContent(content);
+                    message = telegramMessage;
                     break;
             }
 
-            
-
             messageService.sendMessage(message);
 
-        }while (true);
+        } while (true);
     }
 }
