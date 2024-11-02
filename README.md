@@ -32,53 +32,218 @@
 <p>افزودن یک تابع void با عنوان sendTelegramMessage</p>
 </td>
 </tr>
+<tr>
+<td width="64">
+<p><strong>۲</strong></p>
+</td>
+<td width="198">
+<p>SmsMessageService</p>
+</td>
+<td width="141">
+<p>افزودن تابع ارسال پیام تلگرامی</p>
+</td>
+<td width="292">
+<p>افزودن یک تابع
+void 
+با بدنه خالی و عنوان
+sendTelegramMessage</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۳</strong></p>
+</td>
+<td width="198">
+<p>EmailMessageService</p>
+</td>
+<td width="141">
+<p>افزودن تابع ارسال پیام تلگرامی</p>
+</td>
+<td width="292">
+<p>افزودن یک تابع
+void 
+با بدنه خالی و عنوان
+sendTelegramMessage</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۴</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessage</p>
+</td>
+<td width="141">
+<p>
+افزودن کلاس جدید
+</p>
+</td>
+<td width="292">
+<p>
+</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۵</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessage</p>
+</td>
+<td width="141">
+<p>
+افزودن فیلد
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن دو فیلد 
+SourceId 
+و
+DestinationId
+و getter و setter
+برای آن‌ها
+</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۶</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن کلاس جدید
+</p>
+</td>
+<td width="292">
+<p>
+</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۷</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+افزودن تابع void با عنوان
+sendSmsMessage
+با بدنه خالی
+</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۸</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+افزودن تابع void با عنوان
+sendEmailMessage
+با بدنه خالی
+</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۹</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+افزودن تابع boolean با عنوان
+validateTelegramId
+جهت چک کردن معتبر بودن id
+</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۱۰</strong></p>
+</td>
+<td width="198">
+<p>TelegramMessageService</p>
+</td>
+<td width="141">
+<p>
+افزودن تابع
+</p>
+</td>
+<td width="292">
+<p>
+افزودن تابع void با عنوان
+sendTelegramMessage
+جهت ارسال پیام
+</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۱۱</strong></p>
+</td>
+<td width="198">
+<p>Main</p>
+</td>
+<td width="141">
+<p>
+افزودن ورودی گرفتن پیام Telegram
+</p>
+</td>
+<td width="292">
+<p>
+افزودن یک case با شماره 3 و ورودی گرفتن مبدا و مقصد و متن پیام در آن
+</p>
+</td>
+</tr>
+<tr>
+<td width="64">
+<p><strong>۱۲</strong></p>
+</td>
+<td width="198">
+<p>Main</p>
+</td>
+<td width="141">
+<p>
+افزودن قابلیت ارسال پیام با Telegram
+</p>
+</td>
+<td width="292">
+<p>
+اضافه کردن یک if به آخر برنامه و ارسال پیام با استفاده از تابع sendTelegramMessage در صورتی که آبجکت message از جنس TelegramMessage باشد.
+</p>
+</td>
+</tr>
 
-<tr>
-<td width="64">
-<p><strong>&nbsp;</strong></p>
-</td>
-<td width="198">
-<p>&nbsp;</p>
-</td>
-<td width="141">
-<p>&nbsp;</p>
-</td>
-<td width="292">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="64">
-<p><strong>&nbsp;</strong></p>
-</td>
-<td width="198">
-<p>&nbsp;</p>
-</td>
-<td width="141">
-<p>&nbsp;</p>
-</td>
-<td width="292">
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td width="64">
-<p><strong>&nbsp;</strong></p>
-</td>
-<td width="198">
-<p>&nbsp;</p>
-</td>
-<td width="141">
-<p>&nbsp;</p>
-</td>
-<td width="292">
-<p>&nbsp;</p>
-</td>
-</tr>
 </tbody>
 </table>
 
-مجموع تعداد تغییرات: ..............
+مجموع تعداد تغییرات: ۱۲
 
 ## گام ۲: تحلیل و وارسی برنامه از منظر تحقق و یا عدم تحقق اصول SOLID
 
