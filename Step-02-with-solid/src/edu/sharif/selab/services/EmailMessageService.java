@@ -6,13 +6,9 @@ import edu.sharif.selab.models.SmsMessage;
 import java.util.regex.Pattern;
 
 public class EmailMessageService implements MessageService{
-    @Override
-    public void sendSmsMessage(SmsMessage smsMessage) {
-        //Empty Body
-    }
 
     @Override
-    public void sendEmailMessage(EmailMessage emailMessage) {
+    public void sendMessage(EmailMessage emailMessage) {
         if(validateEmailAddress(emailMessage.getSourceEmailAddress()) && validateEmailAddress(emailMessage.getTargetEmailAddress())){
             System.out.println("Sending a SMS from " + emailMessage.getSourceEmailAddress() + " to " + emailMessage.getTargetEmailAddress() + " with content : " + emailMessage.getContent());
         }else{
