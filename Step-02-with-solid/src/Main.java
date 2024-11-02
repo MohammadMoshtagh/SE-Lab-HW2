@@ -29,6 +29,8 @@ public class Main {
                 break;
             }
 
+            MessageService messageService;
+
             switch (userAnswer){
                 case 1:
                     SmsMessage smsMessage = new SmsMessage();
@@ -42,6 +44,7 @@ public class Main {
                     content = scanner.next(".*$");
                     smsMessage.setContent(content);
                     message = smsMessage;
+                    messageService = new SmsMessageService();
                     break;
                 case 2:
                     EmailMessage emailMessage = new EmailMessage();
@@ -55,16 +58,13 @@ public class Main {
                     content = scanner.next();
                     emailMessage.setContent(content);
                     message = emailMessage;
+                    messageService = new EmailMessageService();
                     break;
             }
 
-            if(message instanceof SmsMessage){
-                messageService = new SmsMessageService();
-                messageService.sendSmsMessage((SmsMessage) message);
-            }else if(message instanceof EmailMessage){
-                messageService = new EmailMessageService();
-                messageService.sendEmailMessage((EmailMessage) message);
-            }
+            
+
+            messageService.sendMessage(message);
 
         }while (true);
     }
