@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 public class EmailMessageService implements MessageService{
 
     @Override
-    public void sendMessage(EmailMessage emailMessage) {
+    public void sendMessage(Message message) {
+        EmailMessage emailMessage = (EmailMessage) message;
         if(validateEmailAddress(emailMessage.getSourceEmailAddress()) && validateEmailAddress(emailMessage.getTargetEmailAddress())){
             System.out.println("Sending a SMS from " + emailMessage.getSourceEmailAddress() + " to " + emailMessage.getTargetEmailAddress() + " with content : " + emailMessage.getContent());
         }else{

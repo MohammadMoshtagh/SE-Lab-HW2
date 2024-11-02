@@ -6,7 +6,8 @@ import edu.sharif.selab.models.SmsMessage;
 public class SmsMessageService implements MessageService{
 
     @Override
-    public void sendMessage(SmsMessage smsMessage) {
+    public void sendMessage(Message message) {
+        SmsMessage smsMessage = (SmsMessage) message;
         if(validatePhoneNumber(smsMessage.getSourcePhoneNumber()) && validatePhoneNumber(smsMessage.getTargetPhoneNumber())){
             System.out.println("Sending a SMS from " + smsMessage.getSourcePhoneNumber() + " to " + smsMessage.getTargetPhoneNumber() + " with content : " + smsMessage.getContent());
         }else{

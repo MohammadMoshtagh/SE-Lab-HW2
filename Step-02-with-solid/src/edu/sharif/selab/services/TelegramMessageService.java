@@ -9,7 +9,8 @@ import java.util.regex.Pattern;
 public class TelegramMessageService implements MessageService {
 
     @Override
-    public void sendMessage(TelegramMessage telegramMessage) {
+    public void sendMessage(Message message) {
+        TelegramMessage telegramMessage = (TelegramMessage) message;
         if (validateTelegramId(telegramMessage.getSourceId()) && validateTelegramId(telegramMessage.getDestinationId())) {
             System.out.println("Sending a Telegram Message from " + telegramMessage.getSourceId() + " to " + telegramMessage.getDestinationId() + " with content : " + telegramMessage.getContent());
         } else {
